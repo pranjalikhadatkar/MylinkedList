@@ -53,16 +53,17 @@ public class MyLinkedList<K> {
 		return tempNode;	
 	}
 	
-	public INode<K> popLast() {
-		INode<K> tempNode = head;
-		while(!tempNode.getNext().equals(tail));
-		{
-			tempNode = tempNode.getNext();
-			}
-		this.tail = tempNode;
-		tempNode = tempNode.getNext();
-		return tempNode;
-	}
+	 public INode<K> popLast(){
+	        INode<K> tempNode = this.head;
+	        // get the element just before the last element
+	        while (tempNode.getNext().getNext()!=null){
+	            tempNode = tempNode.getNext();
+	        }
+	        //this.tail = tempNode;
+	        tempNode.setNext(null);
+	        return head;
+	        //return tempNode;
+	    }
 	
 	public void printMyNodes()
 	{

@@ -1,7 +1,5 @@
 package LinkListPractice;
 
-import org.junit.Assert;
-
 import org.junit.Test;
 
 public class MyNodeTest {
@@ -11,6 +9,7 @@ public class MyNodeTest {
 	        MyNode<Integer> mySecondNode = new MyNode<>(30);
 	        MyNode<Integer> myThirdNode = new MyNode<>(70);
 	        
+
 	        MyLinkedList<Integer> MyLinkedlist=new MyLinkedList<Integer>();
 	        MyLinkedlist.add(myFirstNode);
 	        MyLinkedlist.append(mySecondNode);
@@ -18,12 +17,11 @@ public class MyNodeTest {
 	        System.out.print("Initial Linked List: ");
 	        MyLinkedlist.printMyNodes();
 	        
-	        MyLinkedlist.pop();
-	        System.out.print("Linked List after popping first element: ");
-	        MyLinkedlist.printMyNodes();
-	        
-	        boolean result= MyLinkedlist.equals(mySecondNode) &&
-	        		MyLinkedlist.equals(myThirdNode); 
-	        Assert.assertTrue(result);    
-	     }
-	   }
+	        System.out.println("Linked List after popping last element: "); 
+	       System.out.println( MyLinkedlist.popLast());
+
+	        // check if last element of linked list popped
+	        boolean result = MyLinkedlist.head.equals(myFirstNode) &&
+	        		MyLinkedlist.tail.equals(mySecondNode) ;
+	    }
+	}

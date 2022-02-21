@@ -63,26 +63,18 @@ public class MyLinkedList<K> {
 	        return head;        
 	    }
 	 
-	 public INode<K> search(INode<K> srchNode){
-	        INode<K> tempNode = this.head;
-	        int count = 0 ;
-	        Boolean elem_found = false;
-	        while (tempNode.getNext()!= null && (elem_found.equals(false))){
-	            if (tempNode.getKey().equals(srchNode.getKey())){
-	                elem_found = true;
-	                break;
-	            }
-	            tempNode = tempNode.getNext().getNext();
-	            count++;
-	        }
-	        if (elem_found.equals(false)){
-	            count = -1;
-	        }
-	        return tempNode;
-	    }
+	 public void InsertNewNode(INode newNode) {
+			INode tempNode = head.getNext();
+			if (head == null) {
+				System.out.println("List is empty");
+			} else 
+			{
+				head.setNext(newNode);
+				newNode.setNext(tempNode);
+			}	
+		}
 	
-	public void printMyNodes()
-	{
-		System.out.println("My Nodes: "+ head);
-	}	
+	 public void printMyNode() {
+			System.out.println(head);
+	 }
 }

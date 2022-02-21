@@ -4,24 +4,23 @@ import org.junit.Test;
 
 public class MyNodeTest {
 	 @Test
-	 public void givenLastElementWhenDeletedShouldPassedLinkedlistResult(){
+	 public void givenElementWhenSearchedShouldPassedLinkedlistResult(){
 	        MyNode<Integer> myFirstNode = new MyNode<>(56);
 	        MyNode<Integer> mySecondNode = new MyNode<>(30);
 	        MyNode<Integer> myThirdNode = new MyNode<>(70);
-	        
+	       
+	 }
+	 
+	  public static INode<Integer> searchElementLinkedList(Integer search_key,Integer ...args){
+	        MyLinkedList myLinkedList = new MyLinkedList();
+	        for (Integer i:args){
+	            MyNode<Integer> myNode = new MyNode<>(i);
+	            myLinkedList.add(myNode);
+	        }
+	        MyNode<Integer> mysearchNode = new MyNode<>(search_key);
 
-	        MyLinkedList<Integer> MyLinkedlist=new MyLinkedList<Integer>();
-	        MyLinkedlist.add(myFirstNode);
-	        MyLinkedlist.append(mySecondNode);
-	        MyLinkedlist.append(myThirdNode);
-	        System.out.print("Initial Linked List: ");
-	        MyLinkedlist.printMyNodes();
-	        
-	        System.out.println("Linked List after popping last element: "); 
-	       System.out.println( MyLinkedlist.popLast());
-
-	        // check if last element of linked list popped
-	        boolean result = MyLinkedlist.head.equals(myFirstNode) &&
-	        		MyLinkedlist.tail.equals(mySecondNode) ;
+	        System.out.print("Linked List: ");
+	        myLinkedList.printMyNodes();
+	        return myLinkedList.search(mysearchNode);
 	    }
-	}
+}

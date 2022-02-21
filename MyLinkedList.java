@@ -55,18 +55,34 @@ public class MyLinkedList<K> {
 	
 	 public INode<K> popLast(){
 	        INode<K> tempNode = this.head;
-	        // get the element just before the last element
 	        while (tempNode.getNext().getNext()!=null){
 	            tempNode = tempNode.getNext();
 	        }
-	        //this.tail = tempNode;
+
 	        tempNode.setNext(null);
-	        return head;
-	        //return tempNode;
+	        return head;        
+	    }
+	 
+	 public INode<K> search(INode<K> srchNode){
+	        INode<K> tempNode = this.head;
+	        int count = 0 ;
+	        Boolean elem_found = false;
+	        while (tempNode.getNext()!= null && (elem_found.equals(false))){
+	            if (tempNode.getKey().equals(srchNode.getKey())){
+	                elem_found = true;
+	                break;
+	            }
+	            tempNode = tempNode.getNext().getNext();
+	            count++;
+	        }
+	        if (elem_found.equals(false)){
+	            count = -1;
+	        }
+	        return tempNode;
 	    }
 	
 	public void printMyNodes()
 	{
-		System.out.println("My Nodes: "+head);
+		System.out.println("My Nodes: "+ head);
 	}	
 }

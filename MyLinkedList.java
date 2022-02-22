@@ -63,17 +63,20 @@ public class MyLinkedList<K> {
 	        return head;        
 	    }
 	 
-	 public void InsertNewNode(INode newNode) {
-			INode tempNode = head.getNext();
-			if (head == null) {
-				System.out.println("List is empty");
-			} else 
-			{
-				head.setNext(newNode);
-				newNode.setNext(tempNode);
-			}	
-		}
-	
+	 public INode DeleteNode(int i) {
+	        if (this.head == null) {
+	            System.out.println("List is Empty");
+	        }
+	        INode tempNode = head;
+			while (tempNode.getNext() != null) {
+				tempNode = tempNode.getNext();
+			}
+			tempNode.setNext(null);
+			System.out.println("deleted Node is: " + i);
+			
+			return null;
+		}    
+	 
 	 public void printMyNode() {
 			System.out.println(head);
 	 }

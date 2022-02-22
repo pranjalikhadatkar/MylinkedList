@@ -12,11 +12,10 @@ public class MyNodeTest {
 			
 			MyLinkedList myLinkedList = new MyLinkedList();
 			myLinkedList.append(myFirstNode);
-			//linkedlist.add(newNode);
-			myLinkedList.append(myThirdNode);
+			myLinkedList.append(mySecondNode);
 			
-			myLinkedList.InsertNewNode(newNode);
-			myLinkedList.InsertNewNode(mySecondNode);
+			myLinkedList.DeleteNode(40);
+			myLinkedList.append(myThirdNode);
 			myLinkedList.printMyNode();
 			
 		}

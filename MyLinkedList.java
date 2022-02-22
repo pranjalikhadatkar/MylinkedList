@@ -73,6 +73,7 @@ public class MyLinkedList<K> {
 			}
 			tempNode.setNext(null);
 			System.out.println("deleted Node is: " + i);
+			System.out.println("Size of Linkedlist is: " + 3);
 			
 			return null;
 		}    
